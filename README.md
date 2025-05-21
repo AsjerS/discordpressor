@@ -10,7 +10,7 @@ This program was made for Windows, but should be able to run on Linux with some 
 
 - FFmpeg installed in your [PATH](https://github.com/aaatipamula/ffmpeg-install?tab=readme-ov-file#ffmpeg-windows-install).
 - Python 3 (can be installed from the Microsoft Store if not already on your PC).
-- The ZIP file from the `Releases` tab on the right.
+- The ZIP file from the `Releases` tab on the right (`discordpressor-v*.zip`).
 
 ### Setup
 
