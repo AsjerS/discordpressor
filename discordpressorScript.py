@@ -82,7 +82,7 @@ def get_video_info(filepath):
         return width, height, duration, original_fps
 
     except FileNotFoundError:
-        print("Error: ffprobe command not found. Please ensure ffmpeg (and ffprobe) is installed and in your PATH.")
+        print("Error: ffprobe command not found. Please ensure ffprobe is installed and in your PATH.")
         return None, None, None, None
     except subprocess.CalledProcessError as e:
         print(f"Error running ffprobe for {filepath}: {e}")
@@ -128,7 +128,7 @@ def convert_video(input_path):
 
     base, _ = os.path.splitext(input_path)
     temp_output = f"{base}_temp.mp4"
-    final_output = f"{base}_compressed.mp4"
+    final_output = f"{base}_discordpressed.mp4"
 
     print(f"\nProcessing: {input_path} (Preset: {ENCODING_PRESET})")
     width, height, duration, original_fps = get_video_info(input_path)
@@ -138,7 +138,7 @@ def convert_video(input_path):
         return
 
     fps_display = f"{original_fps:.2f}" if original_fps else "N/A"
-    print(f"Video Info: {width}x{height}, Duration: {duration:.2f}s, Original FPS: {fps_display}")
+    print(f"Resolution: {width}x{height}, Duration: {duration:.2f}s, Original FPS: {fps_display}")
 
     vf_filters = []
     if height > MAX_HEIGHT_UNTIL_HALVE:
@@ -154,7 +154,7 @@ def convert_video(input_path):
             vf_filters.append(fps_filter_value)
             print(f"Framerate: Original {original_fps:.2f}fps. Adjusting to {target_fps_val:.2f}fps.")
         else:
-            print(f"Framerate: Original {original_fps:.2f}fps. No change needed based on rules.")
+            print(f"Framerate: Original {original_fps:.2f}fps. No change needed.")
 
     vf_args = ["-vf", ",".join(vf_filters)] if vf_filters else []
 
