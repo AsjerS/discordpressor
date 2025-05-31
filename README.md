@@ -27,7 +27,7 @@ Drag whichever video you want to convert on top of the `discordpressor.bat` file
 
 There are a few values you can play around with in `discordpressorScript.py`, under `# Constants`. Here is an explenation for what each of them do:
 
-- `MAX_SIZE_MB`: controls the maximum size you want your converted video to be
+- `MAX_SIZE_MB`: controls the maximum size you want your converted video to be (warning: result might deviate by max. 0.5 MB)
 - `DEFAULT_VIDEO_BITRATE`: controls the default bitrate of videos, as long as they're not overwritten by the maximum file size (so it's the desired bitrate for short videos basically)
 - `AUDIO_BITRATE`: controls the bitrate of the converted audio, which is in the AAC codec by default
 - `MAX_HEIGHT_UNTIL_HALVE`: if your input video's height exceeds this value, the resolution will be halved to decrease artefacts with low bitrates
